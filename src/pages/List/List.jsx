@@ -27,9 +27,11 @@ const List = ({ url }) => {
       { headers: { token } }
     );
     await fetchList();
+
     if (response.data.success) {
       toast.success(response.data.message);
     } else {
+      console.log("errorr",response.data.message);
       toast.error("Error");
     }
   };
